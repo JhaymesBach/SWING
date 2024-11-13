@@ -1,9 +1,11 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Calculadora2 {
     private JTextField textField1;
     private JButton btn1;
-    private JButton btnadição;
+    private JButton btnadicao;
     private JButton btn4;
     private JButton btn7;
     private JButton btn2;
@@ -16,6 +18,31 @@ public class Calculadora2 {
     private JButton btnsubtrair;
     private JButton btnmultiplicacao;
     private JButton btnigual;
-    private JButton btndivisão;
+    private JButton btndivisao;
     private JButton btnapagar;
 }
+    public Calculadora2 () {
+        String [] buttons = {"+", "-", "*", "/", "C"};
+        for (String text : buttons) {
+            JButton button = new JButton(text);
+            button.addActionListener(new ActionListener(
+                    new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            String input = JTextField.getText();
+                            if (text.equals("C")) {
+                                JTextField.setText("")
+                            }
+                        }
+                    }
+
+
+            ) {});
+        }
+
+    }
+
+
+
+
+
